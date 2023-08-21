@@ -21,7 +21,7 @@ app.use(express.static("static"));
 *==============================*/
 
 app.get("/",(req, res) => {  
-    res.render("index");
+    res.sendFile("/var/www/html/S03/s03-PARCOURS-OBlog-Sasha-Polgar/integration/index.html");
 });
 
 
