@@ -2,6 +2,7 @@
 * Import des modules
 *==============================*/
 const express = require("express");
+const dataArticles = require("./data/articles.json")
 
 /*============================
 * Configuration d'express
@@ -20,12 +21,14 @@ app.use(express.static("static"));
 * Définitions des routes
 *==============================*/
 
+// app.get("/",(req, res) => {  
+//     res.sendFile("/var/www/html/S03/s03-PARCOURS-OBlog-Sasha-Polgar/integration/index.html");
+// });
+
+
 app.get("/",(req, res) => {  
-    res.sendFile("/var/www/html/S03/s03-PARCOURS-OBlog-Sasha-Polgar/integration/index.html");
+    res.render("index",{articles:dataArticles});
 });
-
-
-
 
 
 
