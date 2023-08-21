@@ -2,7 +2,7 @@
 * Import des modules
 *==============================*/
 const express = require("express");
-const dataArticles = require("./data/articles.json")
+const articles = require("./data/articles.json")
 
 /*============================
 * Configuration d'express
@@ -27,9 +27,15 @@ app.use(express.static("static"));
 
 
 app.get("/",(req, res) => {  
-    res.render("index",{articles:dataArticles});
+    res.render("accueil",{articles});
 });
 
+
+app.get("/article/:id", (req, res) => {
+    let articleUrl = req.params.id;
+    let findArticle = articles.find((article) => articles.id === articleUrl);
+    res.render("article_details", {article:findArticle, articles});
+})
 
 
 
