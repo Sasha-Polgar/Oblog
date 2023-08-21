@@ -33,8 +33,8 @@ app.get("/",(req, res) => {
 
 app.get("/article/:id", (req, res) => {
     let articleUrl = req.params.id;
-    let findArticle = articles.find((article) => articles.id === articleUrl);
-    res.render("article_details", {article:findArticle, articles});
+    let findArticle = articles.find((article) => article.id === articleUrl);
+    res.render("article_details", {article:findArticle});
 })
 
 
